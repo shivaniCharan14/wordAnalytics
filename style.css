@@ -1,0 +1,128 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.background{
+    position: absolute;
+    z-index: -10;
+    top: 0;
+    height: 15.875rem;
+    width: 100%;
+    background: linear-gradient(to right,deeppink,deepskyblue);
+}
+.main-heading{
+    font-size: 4.0625rem;
+    letter-spacing: 0.3125;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    margin-top: 4.6875rem;
+    font-weight: 900;
+    text-align: center;
+}
+.main-heading span{
+    font-weight: 500;
+}
+.hero{
+    width: 65.75rem;
+    height: 32.5rem;
+    background-color: #f2f2f2;
+    border-radius: 0.625rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    margin-inline: auto;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#textarea{
+    all: unset;
+    padding: 1.875rem;
+    border-right: 1px solid gray;
+    font-size: 0.8rem;
+    word-break: break-all;
+}
+.stats{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+}
+.stat .stat__heading{
+ color: gray;
+ text-transform: capitalize;
+ font-size: 1rem;
+}
+.stat .stat__number{
+    font-size: 2.1875rem;
+    font-weight: 600;
+    
+}
+
+
+
+
+@media (max-width:1150px){
+    .hero{
+        width: 85vw;
+    }
+    .main-heading{
+        font-size: 7vw;
+    }
+}
+@media (max-width:450px){
+    .hero{
+        grid-template-columns: 1fr;
+    }
+}
